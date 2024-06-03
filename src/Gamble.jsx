@@ -15,7 +15,7 @@ function Gamble({gamble}) {
             </div>
             {gamble.isCorrect &&
                 <div>
-                    gain- {(gamble.sum * gamble.ratio).toFixed(2)}₪
+                    Your profit: {(gamble.sum * gamble.ratio).toFixed(2)}₪
                 </div>
             }
         </div>
