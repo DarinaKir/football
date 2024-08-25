@@ -49,6 +49,13 @@ tr, td, th{
     width: 100px;
     height: 30px;
 }
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr:hover {background-color: #eaedff;}
+
+th {
+    background-color: #173d4b;
+    color: white;
+}
 
 .logout {
     position: fixed;
@@ -67,9 +74,24 @@ tr, td, th{
     left: 0;
     right: 0;
     margin: 2rem auto;
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*text-align: center;*/
+}
+
+.container:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+.container2 {
+    max-width: 1400px;
+    background: #ffffff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 2rem auto;
 }
 
 .container:hover {
@@ -84,7 +106,7 @@ tr, td, th{
     border: transparent;
     border-radius: 0.25rem;
     letter-spacing: 1px;
-    padding: 0.375rem 0.75rem;
+    padding: 0.6rem 0.9rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: 0.3s ease-in-out all;
     text-transform: capitalize;
@@ -92,6 +114,7 @@ tr, td, th{
     width: auto;
     font-weight: bold;
     margin-top: 0.25rem;
+    font-size: 1.25rem;
 }
 
 .btn:hover {
@@ -105,34 +128,28 @@ tr, td, th{
     opacity: 0.5;
 }
 
-.table {
-    right: 0;
-    margin: 3rem auto 0 auto;}
-.tables{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 
-}
-
-.table1,
-.table2 {
-    display: inline-block;
-    vertical-align: top;
-    border: 1px solid black;
-    margin: 2rem;
-    flex: 0 0 auto;
+.input-container {
+    position: relative;
 }
 
 .form-input {
     width: 95%;
-    padding: 0.4rem 0.75rem;
+    padding: 0.8rem 0.75rem;
     border-radius: 0.25rem;
     background: #fcfcfd;
     border: 1px solid #a5a8a7;
-    font-size: 17px;
-}
+    font-size: 24px;
 
+}
+.character-counter {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #646cff;
+    font-size: 1.25rem;
+}
 
 .links{
     text-align: center;
@@ -167,6 +184,9 @@ h2{
     margin-top: 0.25rem;
     font-size: 16px;
 }
+.text{
+    font-size: 19px;
+}
 .sum-gamble-input {
     width: 50px;
     padding: 0.2rem 0.5rem;
@@ -176,9 +196,8 @@ h2{
     margin-left: 0.5rem;
     font-size: 17px;
 }
-.text{
-    font-size: 19px;
-}
+
+
 .red-gamble-container {
     width: 80vw;
     max-width: 300px;
@@ -241,5 +260,90 @@ h2{
     transform: rotate(-30deg);
 }
 
+.game-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #FFCC99;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    font-size: 25px;
+    margin-bottom: 1.25rem;
+}
+.game-results-container {
+    left: 0;
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    align-items: center;
+}
+.team-names {
+    flex: 1;
+    text-align: left;
+}
 
+.teams-score {
+    flex: 0 0 60px;
+    font-weight: bold;
+}
+.table {
+    width: 100%;
+    margin: 3rem auto 0 auto;
+    font-size: 20px;
+    border-spacing: 0 10px;
+}
+.tables{
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+}
 
+.score-table {
+    float: right;
+    margin-left: 20px;
+    border-collapse: collapse;
+    margin-right: 5rem;
+}
+.team-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #CCFFE5;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    font-size: 25px;
+    margin-bottom: 0.5rem;
+}
+.loading {
+    font-size: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.timer {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d35400;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    background-color: #eaeaea;
+    width: fit-content; /* מתאים את רוחב האלמנט לתוכן */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}

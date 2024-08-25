@@ -1,8 +1,8 @@
 import axios from "axios";
 import {useState} from "react";
 import {ToastContainer, toast} from 'react-toastify';
-import {MIN_PASS_LENGTH} from './constants';
-import {errorMessages} from "./ErrorMessages.jsx";
+import {MIN_PASS_LENGTH} from '../utils/Constants.jsx';
+import {errorMessages} from "../utils/ErrorMessages.jsx";
 function SignUp() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");

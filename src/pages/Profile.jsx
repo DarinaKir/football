@@ -2,8 +2,8 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify';
 import PropTypes from 'prop-types';
-import {MIN_PASS_LENGTH} from './constants';
-import {errorMessages} from "./ErrorMessages.jsx";
+import {MIN_PASS_LENGTH} from '../utils/Constants.jsx';
+import {errorMessages} from "../utils/ErrorMessages.jsx";
 function Profile({userSecret}) {
     const [user, setUser] = useState(null);
     const [username, setUsername] = useState("");
@@ -89,7 +89,7 @@ function Profile({userSecret}) {
                     toast.error(errorMessages[response.data.errorCode] || "An unknown error occurred");
                 }
             }).catch(()=>{
-                toast.error("Server Error");
+            toast.error("Server Error");
         })
     }
 
@@ -133,7 +133,7 @@ function Profile({userSecret}) {
             {user &&
                 <div className='container'>
                     <div className='balance'>
-                        Balance = {(user.balance).toFixed(2)}₪
+                        balance= {(user.balance).toFixed(2)}₪
                     </div>
                     <h2>Profile</h2>
                     <div className='form-section'>
